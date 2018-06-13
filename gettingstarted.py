@@ -1,7 +1,12 @@
-student_names = ["James", "Katarina", "Jessica", "Mark", "Bort", "Frank Grimes", "Max Power"]
+student = {
+    "name" : "Mark",
+    "student_id" : 15163,
+    "feedback" : None
+}
 
-for name in student_names:
-    if name == "Bort":
-        continue
-        print("Found him! " + name)
-    print("Currently testing " + name)
+try:
+    last_name = student["last_name"]
+except KeyError:
+    print("Error finding last name")
+
+print("This code executes!")
