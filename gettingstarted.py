@@ -1,20 +1,19 @@
-student = {
-    "name" : "Mark",
-    "student_id" : 15163,
-    "feedback" : None
-}
+students = []
 
-student["last_name"] = "Kowalski"
+def get_students_titlecase():
+    students_titlecase = []
+    for student in students:
+        students_titlecase = student.title()
+    return students_titlecase
 
-try:
-    last_name = student["last_name"]
-    numbered_last_name = 3 + last_name
-except KeyError:
-    print("Error finding last name")
-except TypeError as error:
-    print("I can't add these two together!")
-    print(error)
-except Exception:
-    print("Unknown error")
+def print_students_titlecase():
+    students_titlecase = get_students_titlecase()
+    print(students_titlecase)
 
-print("This code executes!")
+def add_student(name):
+    students.append(name)
+
+student_list = get_students_titlecase()
+
+add_student("Mark")
+print_students_titlecase();
