@@ -11,7 +11,10 @@ try:
     numbered_last_name = 3 + last_name
 except KeyError:
     print("Error finding last name")
-except TypeError:
+except TypeError as error:
     print("I can't add these two together!")
+    print(error)
+except Exception:
+    print("Unknown error")
 
 print("This code executes!")
