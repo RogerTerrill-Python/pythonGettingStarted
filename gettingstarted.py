@@ -1,17 +1,24 @@
 students = []
 
-def read_file():
-    try:
-        f = open("students.txt", "r")
-        for student in read_students(f):
-            students.append(student)
-        f.close()
-    except Exception:
-        print("Could not read file")
+class Student:
+    
+    school_name = "Springfield Elementary"
 
-def read_students(f):
-    for line in f:
-        yield line
+    def __init__(self, name, student_id=332):
+        self.name = name
+        self.student_id = student_id
+        students.append(self)
 
-read_file()
-print(students)
+    def __str__(self):
+        return "Student " + self.name
+
+    def get_name_capitalize(self):
+        return self.name.capitalize()
+
+    def get_school_name(self):
+        return self.school_name
+
+# mark = Student("Mark")
+# print(mark)
+
+print(Student.school_name)
